@@ -1,0 +1,92 @@
+Code Inspection Checklist
+Tyler Bath, Joey Hegg, Andrew White
+ 
+Logistics:
+  1. When will a formal code inspection be warranted?
+	Whenever there is a large branch that will be added to the master branch
+ 
+  2. Who will take the lead on moderating inspections?
+	The rest of the team working on the project( those who didn’t work on the feature in question ).
+ 
+  3. How will you share the results of inspections?
+	The results of the inspection are revealed to the author of the code once the presentation has concluded. During this time the reviewers will have wrote down any concerns and questions and observations that they have, and will question the author on this, or give advice to correct errors. Comments will be added to the merge submission.
+ 
+Criteria:
+  4. What are the key "code smells" from each chapter of Clean Code? This is the big question. Chapter 17 of Clean Code might help you recall them.
+ 
+Code Smells
+ 
+	Comments
+C1 : Inappropriate Information (Not derogative just would be better stored in a different location).
+C2 : Obsolete comments are best to be removed ASAP, as the code that they comment will most likely change, therefore they will lie, updating them is also an option.
+C3 : Redundant Comments are defined as a comment that will describe an idea in the code that can easily be inferred from viewing.
+C4 : Poorly Written comments are comments that are written care-free and are often noted to have poor grammar / punctuation. Additionally, they tend to ramble or state the obvious. BE BRIEF
+C5 : Commented-Out Code is an absolute NO, as anyone else viewing the comments will be adverse to the idea of deleting it,  and as a result the code may waste up space in the program for years even. If encountered DELETE, if it is needed it can be retrieved via the source code control system.
+	Environment
+E1: Build or tests requires more than one step
+E2: Tests require multiple steps to run
+	Functions
+F1: Too many arguments, more than 3 is crazy
+F2: Uses output arguments
+F3: Flag Arguments, booleans arguments should not be used in a function since the function then does more than one thing
+F4: Dead Functions, methods that are never called, need to be removed
+	General
+G1 : Multiple languages in one source file - care should be taken to minimize the number and extent of extra languages throughout the project (ideally one).
+G2 : Obvious Behavior is Unimplemented - Any functions or classes should implement basic functionalities that another programmer would tend to expect. Failure to do so instills distrust in the author’s work and future encounters with their code.
+G3 : Incorrect Behavior at the Boundaries - use BVA to avoid.
+G4 : Overridden Safeties - never do this.
+G5 : Duplication - Don't repeat yourself.
+G6 : Code at wrong level of abstraction - separate classes to hold higher and lower concepts.
+G7 : Base Classes Depending on Their Derivatives - in general base classes should not know about derivatives. (Can be valid exceptions)
+G8 : Too Much Information - Keep coupling low (very small interfaces that do a lot)
+G9 : Dead Code - If code is in the program, make sure it's actually used.
+G10 : Vertical Separation - Variables and functions defined by use location. (Especially local variables) Private functions should be defined below first usage. 
+G11 : Inconsistency - Do everything with the same style.
+G12 : Clutter - Delete useless data / comments.
+G13 : Artificial Coupling - Don’t couple things that don’t depend on each other.
+G15: Selector Arguments
+G16: Obscured Intent
+G18: Inappropriate Static
+G19: Use Explanatory Variables
+G20: Function Names Should Say What They Do
+G21: Understand the Algorithm
+ 
+	Names
+N1: Choose descriptive names
+N2: Choose Names at the appropriate level of abstraction
+N3: Use standard nomenclature where possible
+N4: Use Unambiguous names
+N5: use long names for long scopes
+N6: Avoid Encodings
+N7: Names should describe side effects
+ 
+	Tests
+Insufficient Tests
+Use a coverage tool
+Don’t skip trivial tests
+Ignored test = question about ambiguity
+USE BVA
+Exhaustively tests near know bug locations (they congregate)
+Patterns of failure are revealing
+Test coverage patterns can be revealing
+Tests should be fast
+ 
+ 
+  5. Will everyone apply all criteria from every chapter from Clean Code? Or will each person specialize in a few criteria?
+	Should have everyone apply all criteria from Clean Code because we want as many eyes on each part of the code as possible. This will ensure that poor formatting, naming conventions, and other quality issues are avoided.
+ 
+ 
+Scope:
+  6. Will your team inspect every file in your codebase? Every file you touch in your feature branch? Or something else entirely?
+	The team will inspect the files that were touched/changed in the feature branch.
+ 
+  7. Of those files, will each person look at every file in consideration? Or will your team assign different files to different people?
+	Everyone should look at every file in consideration, this way everyone has a chance to comment on possible errors in all files. This makes it harder to misses errors in the code ( which is the purpose of a code review ).
+ 
+ 
+Tools:
+  8. To what extent can your inspection criteria be automated? Automation will increase your inspection's speed and reliability.
+	There will not be much automation in our inspection since the code could still be functional and have some bad code smells. We will be able to automate the formatting of our programs so that the code will always be readable to those inspecting the code. 
+ 
+  9. Which aspects of your inspection criteria will need human intervention?
+	Certainly, inspecting the code line-by-line visually will require human intervention. Additionally, determining whether a variable is appropriately named and whether a comment provides useful information or not will require human intervention. Certainly, determining whether a system is designed correctly( whether it requires more encapsulation, cohesion, etc ) would be very hard to automate and would be left to team members. 

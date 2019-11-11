@@ -1,0 +1,46 @@
+
+###
+# This does not include the two wild card
+##
+Afghanistan:Horse
+Alaska:Soldier
+Alberta:Horse
+Argentina:Soldier
+Brazil:Cannon
+Central America:Cannon
+China:Soldier
+Congo:Soldier
+East Africa:Soldier
+Eastern Australia:Cannon
+Eastern United States:Cannon
+Egypt:Soldier
+Great Britain:Cannon
+Greenland:Horse
+Iceland:Soldier
+India:Cannon
+Indonesia:Cannon
+Irkutsk:Horse
+Japan:Horse
+Kamchatka:Soldier
+Madagascar:Horse
+Middle East:Soldier
+Mongolia:Soldier
+New Guinea:Soldier
+North Africa:Horse
+Northern Europe:Cannon
+Northwest Territory:Cannon
+Ontario:Horse
+Peru:Soldier
+Quebec:Horse
+Scandinavia:Horse
+Siam:Soldier
+Siberia:Horse
+South Africa:Cannon
+Southern Europe:Cannon
+Ukraine:Horse
+Ural:Horse
+Venezuela:Soldier
+Western Australia:Cannon
+Western Europe:Cannon
+Western United States:Cannon
+Yakutsk:Horse
